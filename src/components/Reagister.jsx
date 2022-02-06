@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from "../api/axios";
 
 
+
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
@@ -77,7 +78,7 @@ const Register = () => {
             if(!err?.response){
                 setErrMsg('Server Not Response')
             }else if(err.response?.status === 409){
-                setErrMsg('Tsername Taken')
+                setErrMsg('Username Taken')
             }else{
                 setErrMsg('Registration Gagal')
             }
@@ -187,6 +188,7 @@ const Register = () => {
                         <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
                     </form>
                     <p>
+                       
                         Jika Sudah Daftar?<br />
                         <span className="line">
                             {/* Router in here */}
